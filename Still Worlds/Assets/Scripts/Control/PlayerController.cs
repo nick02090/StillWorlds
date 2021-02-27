@@ -1,11 +1,14 @@
 ﻿using Gameplay.Characters;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 namespace Control
 {
     [RequireComponent(typeof(PlayerCharacter))]
     public class PlayerController : MonoBehaviour
     {
+        public ParticleSystem HatParticles;
+
         private ICharacter playerCharacter;
 
         private void Start()
@@ -23,6 +26,10 @@ namespace Control
             float horizontal = Input.GetAxis("Horizontal");
             float rotationSpeed = playerCharacter.GetRotationSpeed();
             transform.Rotate(transform.up, rotationSpeed * horizontal * Time.deltaTime);
+
+            // Increase the hat particle speed when moving
+            VelocityOverLifetimeModule velocityOverLifetime = HatParticles.velocityOverLifetime;
+            velocityOverLifetime.speedModifier = vertical;
         }
     }
 }
