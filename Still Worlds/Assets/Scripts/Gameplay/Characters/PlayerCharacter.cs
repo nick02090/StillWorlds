@@ -1,4 +1,5 @@
 ﻿using Gameplay.Interactors;
+using UI;
 using UnityEngine;
 
 namespace Gameplay.Characters
@@ -10,6 +11,31 @@ namespace Gameplay.Characters
 
         private Interactor interactor = null;
         private Portal portal = null;
+
+        private HUD hud;
+
+        private int life = 1;
+        private int kill = 0;
+
+        public void Start()
+        {
+            GameObject[] hudObjects = GameObject.FindGameObjectsWithTag("HUD");
+            if (hudObjects.Length > 1)
+            {
+                Debug.LogError("More than one HUD has been found here!");
+            }
+            hud = hudObjects[0].GetComponent<HUD>();
+            // Set HUD initial parameters
+            hud.UpdateLife(life);
+            hud.UpdateKill(kill);
+        }
+
+        public void Update()
+        {
+            // Update life parameters
+            hud.UpdateLife(life);
+            hud.UpdateKill(kill);
+        }
 
         public void OnTriggerEnter(Collider other)
         {
@@ -61,6 +87,42 @@ namespace Gameplay.Characters
         public Portal GetPortal()
         {
             return portal;
+        }
+
+        public int GetLife()
+        {
+            return life;
+        }
+
+        public void SetLife(int _life)
+        {
+            life = _life;
+        }
+
+        public int GetKill()
+        {
+            return kill;
+        }
+
+        public void SetKill(int _kill)
+        {
+            kill = _kill;
+        }
+
+        public void Attack()
+        {
+            // Lose one LIFE when attacking
+            int currentLife = GetLife();
+            currentLife--;
+            SetLife(currentLife);
+        }
+
+        public void TakeHit()
+        {
+            // Lose one LIFE when taking a hit
+            int currentLife = GetLife();
+            currentLife--;
+            SetLife(currentLife);
         }
         #endregion
     }

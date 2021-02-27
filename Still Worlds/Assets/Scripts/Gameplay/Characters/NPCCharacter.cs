@@ -35,6 +35,36 @@ namespace Gameplay.Characters
         {
             throw new System.NotImplementedException();
         }
+
+        public int GetLife()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void SetLife(int life)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public int GetKill()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void SetKill(int kill)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Attack()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void TakeHit()
+        {
+            throw new System.NotImplementedException();
+        }
         #endregion
     }
 }

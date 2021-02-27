@@ -8,5 +8,11 @@ namespace Gameplay.Characters
         float GetRotationSpeed();
         Interactor GetInteractor();
         Portal GetPortal();
+        int GetLife();
+        void SetLife(int life);
+        void Attack();
+        void TakeHit();
+        int GetKill();
+        void SetKill(int kill);
     }
 }
