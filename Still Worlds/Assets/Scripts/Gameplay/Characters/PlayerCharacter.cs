@@ -19,11 +19,19 @@ namespace Gameplay.Characters
                 NPCCharacter.ShowInteraction();
                 interactor = NPCCharacter;
             }
+            // On collision with portal
+            else if (other.CompareTag("Portal"))
+            {
+                Debug.Log("Collided with portal!");
+            }
         }
 
         public void OnTriggerExit(Collider other)
         {
-            interactor.HideInteraction();
+            if (interactor != null)
+            {
+                interactor.HideInteraction();
+            }
             interactor = null;
         }
 

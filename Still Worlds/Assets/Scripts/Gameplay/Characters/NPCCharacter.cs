@@ -3,8 +3,18 @@ using UnityEngine;
 
 namespace Gameplay.Characters
 {
-    public class NPCCharacter : MonoBehaviour, ICharacter
+    public abstract class NPCCharacter : MonoBehaviour, ICharacter
     {
+        private Interactor interactor;
+
+        public abstract void SpecialAction();
+
+        private void Start()
+        {
+            interactor = GetComponent<Interactor>();
+            interactor.onFirstInteractionEnd += SpecialAction;
+        }
+
         #region ICharacter
         public float GetMovementSpeed()
         {

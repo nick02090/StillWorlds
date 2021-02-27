@@ -1,4 +1,5 @@
 ﻿using Core;
+using System.Collections;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,9 @@ namespace Gameplay.Interactors
     {
         public Text InteractionButton;
         public Messages[] messages;
+
+        public delegate void FirstInteractionEnd();
+        public FirstInteractionEnd onFirstInteractionEnd;
 
         private int intercationIndex = 0;
         private int messageIndex;
@@ -44,6 +48,10 @@ namespace Gameplay.Interactors
 
         public void FinishInteraction()
         {
+            if (intercationIndex == 0)
+            {
+                onFirstInteractionEnd?.Invoke();
+            }
             dialogue.EndDialogue();
             intercationIndex++;
             if (intercationIndex >= messages.Length)
