@@ -251,6 +251,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionButton: {fileID: 6697168720581650033}
+  messages:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &6697168719543115124
 PrefabInstance:
   m_ObjectHideFlags: 0
