@@ -9,6 +9,7 @@ namespace Gameplay.Characters
         public float RotationSpeed = 1.0f;
 
         private Interactor interactor = null;
+        private Portal portal = null;
 
         public void OnTriggerEnter(Collider other)
         {
@@ -22,7 +23,8 @@ namespace Gameplay.Characters
             // On collision with portal
             else if (other.CompareTag("Portal"))
             {
-                Debug.Log("Collided with portal!");
+                portal = other.GetComponent<Portal>();
+                portal.ShowInteraction();
             }
         }
 
@@ -32,7 +34,12 @@ namespace Gameplay.Characters
             {
                 interactor.HideInteraction();
             }
+            if (portal != null)
+            {
+                portal.HideInteraction();
+            }
             interactor = null;
+            portal = null;
         }
 
         #region ICharacter
@@ -49,6 +56,11 @@ namespace Gameplay.Characters
         public Interactor GetInteractor()
         {
             return interactor;
+        }
+
+        public Portal GetPortal()
+        {
+            return portal;
         }
         #endregion
     }

@@ -7,5 +7,6 @@ namespace Gameplay.Characters
         float GetMovementSpeed();
         float GetRotationSpeed();
         Interactor GetInteractor();
+        Portal GetPortal();
     }
 }

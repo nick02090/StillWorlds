@@ -30,6 +30,11 @@ namespace Gameplay.Characters
         {
             throw new System.NotImplementedException();
         }
+
+        public Portal GetPortal()
+        {
+            throw new System.NotImplementedException();
+        }
         #endregion
     }
 }

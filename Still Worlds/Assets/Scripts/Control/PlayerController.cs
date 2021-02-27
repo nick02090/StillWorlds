@@ -1,4 +1,5 @@
-﻿using Gameplay.Characters;
+﻿using Gameplay;
+using Gameplay.Characters;
 using Gameplay.Interactors;
 using UnityEngine;
 
@@ -50,6 +51,7 @@ namespace Control
         private void Update()
         {
             InteractWithNPC();
+            InteractWithPortal();
             //ShowFPS();
         }
 
@@ -60,15 +62,30 @@ namespace Control
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    // Start the interaction with the NPC
                     if (!isInteracting)
                     {
                         isInteracting = true;
                         interactor.Interact();
                     }
+                    // Continue interaction with the NPC after another E press
                     else
                     {
                         isInteracting = interactor.ContinueInteraction();
                     }
+                }
+            }
+        }
+
+        public void InteractWithPortal()
+        {
+            Portal portal = playerCharacter.GetPortal();
+            if (portal != null)
+            {
+                // Enter the portal
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    portal.Interact();
                 }
             }
         }
