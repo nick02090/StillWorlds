@@ -18,6 +18,11 @@ namespace Control
 
         private void FixedUpdate()
         {
+            MovePlayer();
+        }
+
+        public void MovePlayer()
+        {
             // Move player (based on input)
             float vertical = Input.GetAxis("Vertical");
             float movementSpeed = playerCharacter.GetMovementSpeed();
@@ -30,14 +35,33 @@ namespace Control
             if (vertical > 0.0f)
             {
                 WalkParticle.Play();
-            } else
+            }
+            else
             {
                 WalkParticle.Stop();
             }
         }
 
-        public float deltaTime;
         private void Update()
+        {
+            InteractWithNPC();
+            //ShowFPS();
+        }
+
+        public void InteractWithNPC()
+        {
+            ICharacter interactor = playerCharacter.GetInteractor();
+            if (interactor != null)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    interactor.Interact();
+                }
+            }
+        }
+
+        public float deltaTime;
+        private void ShowFPS()
         {
             deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
             float fps = 1.0f / deltaTime;
