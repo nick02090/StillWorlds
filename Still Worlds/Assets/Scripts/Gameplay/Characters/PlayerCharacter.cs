@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Gameplay.Interactors;
+using UnityEngine;
 
 namespace Gameplay.Characters
 {
@@ -7,19 +8,16 @@ namespace Gameplay.Characters
         public float MovementSpeed = 1.0f;
         public float RotationSpeed = 1.0f;
 
-        private ICharacter interactor = null;
+        private Interactor interactor = null;
 
         public void OnTriggerEnter(Collider other)
         {
             // On collision with the NPC
             if (other.CompareTag("NPC"))
             {
-                ICharacter NPCCharacter = other.GetComponent<ICharacter>();
-                if(NPCCharacter.IsInteractable())
-                {
-                    NPCCharacter.ShowInteraction();
-                    interactor = NPCCharacter;
-                }
+                Interactor NPCCharacter = other.GetComponent<Interactor>();
+                NPCCharacter.ShowInteraction();
+                interactor = NPCCharacter;
             }
         }
 
@@ -40,34 +38,9 @@ namespace Gameplay.Characters
             return RotationSpeed;
         }
 
-        public void Interact()
-        {
-            return;
-        }
-
-        public bool IsInteractable()
-        {
-            return false;
-        }
-
-        public void ShowInteraction()
-        {
-            return;
-        }
-
-        public void HideInteraction()
-        {
-            return;
-        }
-
-        public ICharacter GetInteractor()
+        public Interactor GetInteractor()
         {
             return interactor;
-        }
-
-        public void SetInteractor(ICharacter character)
-        {
-            interactor = character;
         }
         #endregion
     }

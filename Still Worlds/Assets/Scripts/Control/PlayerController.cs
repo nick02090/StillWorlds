@@ -1,4 +1,5 @@
 ﻿using Gameplay.Characters;
+using Gameplay.Interactors;
 using UnityEngine;
 
 namespace Control
@@ -9,6 +10,7 @@ namespace Control
         public ParticleSystem WalkParticle;
 
         private ICharacter playerCharacter;
+        private bool isInteracting = false;
 
         private void Start()
         {
@@ -18,7 +20,10 @@ namespace Control
 
         private void FixedUpdate()
         {
-            MovePlayer();
+            if (!isInteracting)
+            {
+                MovePlayer();
+            }
         }
 
         public void MovePlayer()
@@ -50,12 +55,20 @@ namespace Control
 
         public void InteractWithNPC()
         {
-            ICharacter interactor = playerCharacter.GetInteractor();
+            Interactor interactor = playerCharacter.GetInteractor();
             if (interactor != null)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    interactor.Interact();
+                    if (!isInteracting)
+                    {
+                        isInteracting = true;
+                        interactor.Interact();
+                    }
+                    else
+                    {
+                        isInteracting = interactor.ContinueInteraction();
+                    }
                 }
             }
         }
