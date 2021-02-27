@@ -9,6 +9,7 @@ namespace Gameplay.Interactors
     {
         public Text InteractionButton;
         public Messages[] messages;
+        public string interactorName;
 
         public delegate void FirstInteractionEnd();
         public FirstInteractionEnd onFirstInteractionEnd;
@@ -42,6 +43,7 @@ namespace Gameplay.Interactors
         {
             // Start a dialogue
             messageIndex = 0;
+            dialogue.SetName(interactorName);
             dialogue.StartDialogue(messages[intercationIndex].Get(messageIndex));
         }
 

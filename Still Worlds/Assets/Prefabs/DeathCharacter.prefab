@@ -257,6 +257,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  interactorName: DEATH
 --- !u!114 &1110525213439393678
 MonoBehaviour:
   m_ObjectHideFlags: 0

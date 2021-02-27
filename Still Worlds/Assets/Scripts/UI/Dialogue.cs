@@ -1,5 +1,6 @@
 ﻿using Core;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -45,9 +46,17 @@ namespace UI
         {
             DialoguePanel.gameObject.SetActive(true);
         }
+
         private void HideDialoguePanel()
         {
             DialoguePanel.gameObject.SetActive(false);
+        }
+
+        public void SetName(string interactorName)
+        {
+            Transform dialogueNameTransform = DialoguePanel.GetChild(1);
+            Text dialogueNameText = dialogueNameTransform.gameObject.GetComponent<Text>();
+            dialogueNameText.text = interactorName;
         }
     }
 }

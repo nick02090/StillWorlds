@@ -957,12 +957,11 @@ MonoBehaviour:
   - Yes, one and only god of everything.
   - And this - this is my chamber and my personal world - Still Worlds; from where
     I keep all the worlds at peace.
-  - I have brought you here... well, for reasons I can't speak of, but you may learn
-    someday.
+  - I have brought you here to do me a favor of sorts - a few tasks if you will.
   - 'Anyways, rules here are simple: no killing!'
   - I guess that goes for every other world, not just the Still Worlds.
-  - 'But here, there''s an extra catch: every time you attack anyone - you will lose
-    one LIFE.'
+  - 'But here, there''s an extra catch: there''s no attacking either.'
+  - Though you may attack but every time you attack anyone - you will lose one LIFE.
   - If anyone tries to attack you - he will also lose a LIFE. Eye for an eye, eh?
   - In general, you can attack but you must not kill anyone you encounter here.
   - To be sure of your self pledged "no killing" policy, I will personally watch
@@ -1285,7 +1284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - I made a protal for you.
+  - I made a portal for you.
   - Turn around and get into it.
 --- !u!1 &1113895577
 GameObject:
