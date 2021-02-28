@@ -1,4 +1,5 @@
-﻿using Gameplay;
+﻿using Core;
+using Gameplay;
 using Gameplay.Characters;
 using Gameplay.Interactors;
 using UnityEngine;
@@ -14,10 +15,14 @@ namespace Control
         private ICharacter playerCharacter;
         private bool isInteracting = false;
 
+
+        private PoolManager poolManager;
+
         private void Start()
         {
             // Initialize member variables
             playerCharacter = GetComponent<PlayerCharacter>();
+            poolManager = PoolManager.instance;
         }
 
         private void FixedUpdate()
@@ -25,10 +30,6 @@ namespace Control
             if (!isInteracting & playerCharacter.GetLife() > 0)
             {
                 MovePlayer();
-                if (enableAttack)
-                {
-                    Attack();
-                }
             }
         }
 
@@ -53,19 +54,27 @@ namespace Control
             }
         }
 
+        private void Update()
+        {
+            InteractWithNPC();
+            InteractWithPortal();
+            if (!isInteracting & playerCharacter.GetLife() > 0)
+            {
+                if (enableAttack)
+                {
+                    Attack();
+                }
+            }
+            //ShowFPS();
+        }
+
         private void Attack()
         {
             if (Input.GetMouseButtonDown(0))
             {
                 playerCharacter.Attack();
+                poolManager.CreateNext(GetComponent<Collider>(), transform.position + transform.forward + transform.up, transform.forward);
             }
-        }
-
-        private void Update()
-        {
-            InteractWithNPC();
-            InteractWithPortal();
-            //ShowFPS();
         }
 
         public void InteractWithNPC()

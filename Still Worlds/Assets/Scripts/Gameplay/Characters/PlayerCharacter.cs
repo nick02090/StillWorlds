@@ -16,7 +16,7 @@ namespace Gameplay.Characters
         private HUD hud = null;
         private GameObject deathScreen;
 
-        private int life = 1;
+        private int life = 3100;
         private int kill = 0;
 
         public void Start()
@@ -56,6 +56,7 @@ namespace Gameplay.Characters
 
             // Set initial spawn location
             transform.position = spawnLocation.Location;
+            transform.rotation = Quaternion.identity;
         }
 
         public void Resume()
@@ -63,6 +64,7 @@ namespace Gameplay.Characters
             life = 1;
             deathScreen.SetActive(false);
             transform.position = spawnLocation.Location;
+            transform.rotation = Quaternion.identity;
         }
 
         public void Update()
