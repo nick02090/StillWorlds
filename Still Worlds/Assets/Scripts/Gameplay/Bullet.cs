@@ -37,6 +37,10 @@ namespace Gameplay
                 other.GetComponent<ICharacter>().TakeHit();
                 Explode();
             }
+            if (other.CompareTag("Environment"))
+            {
+                Explode();
+            }
         }
 
         private void OnEnable()

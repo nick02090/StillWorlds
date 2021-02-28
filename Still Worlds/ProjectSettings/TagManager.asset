@@ -10,6 +10,7 @@ TagManager:
   - HUD
   - DeathScreen
   - Enemy
+  - Environment
   layers:
   - Default
   - TransparentFX
