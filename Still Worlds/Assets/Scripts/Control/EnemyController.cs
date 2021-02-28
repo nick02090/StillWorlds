@@ -26,7 +26,15 @@ namespace Control
             enemyCharacter = GetComponent<EnemyCharacter>();
             // Initialize AI
             GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
-            EnemyState startingState = new SearchState(gameObject, agent, playerGameObject, enemyCharacter);
+            EnemyState startingState;
+            if (enemyCharacter.GetLife() > 1)
+            {
+                startingState = new SearchState(gameObject, agent, playerGameObject, enemyCharacter);
+            }
+            else
+            {
+                startingState = new IdleState(gameObject, agent, playerGameObject, enemyCharacter);
+            }
             startingState.onAttack += OnAttack;
             ai = new FSMAI(startingState);
             // Initialize starting position

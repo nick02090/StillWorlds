@@ -1,6 +1,7 @@
 ﻿using Gameplay.Interactors;
 using UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gameplay.Characters
 {
@@ -14,10 +15,14 @@ namespace Gameplay.Characters
         private Portal portal = null;
 
         private HUD hud = null;
-        private GameObject deathScreen;
+        private GameObject deathScreenPanel;
 
-        private int life = 3100;
+        private int life = 1;
         private int kill = 0;
+
+        private bool isSuicide = false;
+        private readonly string suicideText = "You commited suicide by attacking with 1 LIFE.";
+        private readonly string deathText = "An enemy killed you!";
 
         public void Start()
         {
@@ -47,11 +52,11 @@ namespace Gameplay.Characters
             }
             else if (deathScreenObjects.Length == 0)
             {
-                deathScreen = null;
+                deathScreenPanel = null;
             }
             else
             {
-                deathScreen = deathScreenObjects[0].transform.GetChild(0).gameObject;
+                deathScreenPanel = deathScreenObjects[0].transform.GetChild(0).gameObject;
             }
 
             // Set initial spawn location
@@ -62,9 +67,11 @@ namespace Gameplay.Characters
         public void Resume()
         {
             life = 1;
-            deathScreen.SetActive(false);
+            isSuicide = false;
+            deathScreenPanel.SetActive(false);
             transform.position = spawnLocation.Location;
             transform.rotation = Quaternion.identity;
+            Time.timeScale = 1f;
         }
 
         public void Update()
@@ -77,7 +84,17 @@ namespace Gameplay.Characters
             }
             if (life <= 0)
             {
-                deathScreen.SetActive(true);
+                Text deathExplanaiton = deathScreenPanel.transform.GetChild(0).GetComponent<Text>();
+                if (isSuicide)
+                {
+                    deathExplanaiton.text = suicideText;
+                }
+                else
+                {
+                    deathExplanaiton.text = deathText;
+                }
+                deathScreenPanel.SetActive(true);
+                Time.timeScale = 0f;
             }
         }
 
@@ -165,6 +182,7 @@ namespace Gameplay.Characters
                 int currentKill = GetKill();
                 currentKill++;
                 SetKill(currentKill);
+                isSuicide = true;
             }
         }
 

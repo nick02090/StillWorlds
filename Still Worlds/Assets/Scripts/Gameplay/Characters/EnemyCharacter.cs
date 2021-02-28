@@ -18,7 +18,7 @@ namespace Gameplay.Characters
         private int life;
         private Quaternion m_rotation;
 
-        private void Start()
+        private void Awake()
         {
             // Initialize member variables
             life = InitLife;
