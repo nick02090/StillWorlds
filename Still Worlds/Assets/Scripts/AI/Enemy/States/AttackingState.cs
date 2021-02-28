@@ -29,7 +29,10 @@ namespace AI.Enemy.States
                     // Check if you have more than one life
                     if (enemyCharacter.GetLife() == 1)
                     {
-                        nextState = new IdleState(enemyGameObject, agent, playerGameObject, enemyCharacter);
+                        nextState = new IdleState(enemyGameObject, agent, playerGameObject, enemyCharacter)
+                        {
+                            onAttack = onAttack
+                        };
                         stage = Event.EXIT;
                         return;
                     }
@@ -40,7 +43,10 @@ namespace AI.Enemy.States
                 else
                 {
                     // Go towards the hearing sound
-                    nextState = new ChaseState(enemyGameObject, agent, playerGameObject, enemyCharacter);
+                    nextState = new ChaseState(enemyGameObject, agent, playerGameObject, enemyCharacter)
+                    {
+                        onAttack = onAttack
+                    };
                     stage = Event.EXIT;
                     return;
                 }
@@ -48,7 +54,10 @@ namespace AI.Enemy.States
             else
             {
                 // Go back to path searching
-                nextState = new SearchState(enemyGameObject, agent, playerGameObject, enemyCharacter);
+                nextState = new SearchState(enemyGameObject, agent, playerGameObject, enemyCharacter)
+                {
+                    onAttack = onAttack
+                };
                 stage = Event.EXIT;
                 return;
             }

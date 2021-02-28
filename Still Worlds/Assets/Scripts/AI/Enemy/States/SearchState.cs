@@ -33,14 +33,20 @@ namespace AI.Enemy.States
                 if (CanSeePlayer())
                 {
                     // Attack him
-                    nextState = new AttackingState(enemyGameObject, agent, playerGameObject, enemyCharacter);
+                    nextState = new AttackingState(enemyGameObject, agent, playerGameObject, enemyCharacter)
+                    {
+                        onAttack = onAttack
+                    };
                     stage = Event.EXIT;
                     return;
                 }
                 else
                 {
                     // Go towards the hearing sound
-                    nextState = new ChaseState(enemyGameObject, agent, playerGameObject, enemyCharacter);
+                    nextState = new ChaseState(enemyGameObject, agent, playerGameObject, enemyCharacter)
+                    {
+                        onAttack = onAttack
+                    };
                     stage = Event.EXIT;
                     return;
                 }

@@ -27,7 +27,10 @@ namespace AI.Enemy.States
                 if (CanSeePlayer())
                 {
                     // Attack him
-                    nextState = new AttackingState(enemyGameObject, agent, playerGameObject, enemyCharacter);
+                    nextState = new AttackingState(enemyGameObject, agent, playerGameObject, enemyCharacter)
+                    {
+                        onAttack = onAttack
+                    };
                     stage = Event.EXIT;
                     return;
                 }
@@ -41,7 +44,10 @@ namespace AI.Enemy.States
             else
             {
                 // Go back to path searching
-                nextState = new SearchState(enemyGameObject, agent, playerGameObject, enemyCharacter);
+                nextState = new SearchState(enemyGameObject, agent, playerGameObject, enemyCharacter)
+                {
+                    onAttack = onAttack
+                };
                 stage = Event.EXIT;
                 return;
             }

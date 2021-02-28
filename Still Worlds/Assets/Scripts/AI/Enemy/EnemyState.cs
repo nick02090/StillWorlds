@@ -7,7 +7,7 @@ namespace AI.Enemy
     public class EnemyState : IState
     {
         public delegate void OnAttack();
-        public static OnAttack onAttack;
+        public OnAttack onAttack;
 
         public enum State
         {

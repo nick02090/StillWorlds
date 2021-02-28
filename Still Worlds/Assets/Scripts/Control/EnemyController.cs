@@ -27,7 +27,7 @@ namespace Control
             // Initialize AI
             GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
             EnemyState startingState = new SearchState(gameObject, agent, playerGameObject, enemyCharacter);
-            EnemyState.onAttack += OnAttack;
+            startingState.onAttack += OnAttack;
             ai = new FSMAI(startingState);
             // Initialize starting position
             lastPosition = transform.position;
