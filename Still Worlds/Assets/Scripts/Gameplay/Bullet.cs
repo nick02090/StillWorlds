@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Gameplay.Characters;
+using System.Collections;
 using UnityEngine;
 
 namespace Gameplay
@@ -18,29 +19,39 @@ namespace Gameplay
         {
             if (other.CompareTag("Enemy"))
             {
-                //Health enemyHealth = other.GetComponent<Health>();
-                //enemyHealth.TakeDamage(20);
-                StartCoroutine(Explode());
-                //Invoke("OnDisable", 0f);
+                ICharacter enemyCharacter = other.GetComponent<ICharacter>();
+                if (enemyCharacter.GetLife() == 1)
+                {
+                    // If player has killed an enemy, increase the kill counter
+                    GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
+                    ICharacter playerCharacter = playerGameObject.GetComponent<ICharacter>();
+                    int currentPlayerKill = playerCharacter.GetKill();
+                    currentPlayerKill++;
+                    playerCharacter.SetKill(currentPlayerKill);
+                }
+                enemyCharacter.TakeHit();
+                Explode();
             }
-            if (other.CompareTag("Mine"))
+            if (other.CompareTag("Player"))
             {
-                //Health mineHealth = other.GetComponent<Health>();
-                //mineHealth.TakeDamage(40);
-                StartCoroutine(Explode());
-                //Invoke("OnDisable", 0f);
+                other.GetComponent<ICharacter>().TakeHit();
+                Explode();
             }
         }
 
         private void OnEnable()
         {
-            StartCoroutine(Explode());
-            //Invoke("OnDisable", waitForSeconds);
+            StartCoroutine(StartExplode());
         }
 
-        private IEnumerator Explode()
+        private IEnumerator StartExplode()
         {
             yield return new WaitForSeconds(waitForSeconds);
+            Explode();
+        }
+
+        private void Explode()
+        {
             Explosion.transform.position = transform.position;
             Explosion.Play();
             Invoke("OnDisable", 0f);

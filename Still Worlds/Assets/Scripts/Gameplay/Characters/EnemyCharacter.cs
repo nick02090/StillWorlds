@@ -1,6 +1,4 @@
 ﻿using Gameplay.Interactors;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gameplay.Characters
@@ -12,6 +10,20 @@ namespace Gameplay.Characters
         public int InitLife;
 
         private int life;
+
+        private void Start()
+        {
+            // Initialize member variables
+            life = InitLife;
+        }
+
+        private void Update()
+        {
+            if (life <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
 
         #region ICharacter
         public float GetMovementSpeed()

@@ -141,12 +141,6 @@ namespace Gameplay.Characters
         public void SetLife(int _life)
         {
             life = _life;
-            if (life <= 0)
-            {
-                int currentKill = GetKill();
-                currentKill++;
-                SetKill(currentKill);
-            }
         }
 
         public int GetKill()
@@ -165,6 +159,13 @@ namespace Gameplay.Characters
             int currentLife = GetLife();
             currentLife--;
             SetLife(currentLife);
+            // Add a kill if you've attacked when having one LIFE left
+            if (life <= 0)
+            {
+                int currentKill = GetKill();
+                currentKill++;
+                SetKill(currentKill);
+            }
         }
 
         public void TakeHit()

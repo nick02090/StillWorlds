@@ -4893,6 +4893,7 @@ GameObject:
   - component: {fileID: 232658815}
   - component: {fileID: 232658814}
   - component: {fileID: 232658816}
+  - component: {fileID: 232658817}
   m_Layer: 0
   m_Name: RedBunny
   m_TagString: Enemy
@@ -4924,7 +4925,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232658812}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1
   m_Height: 1
@@ -4968,6 +4969,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &232658817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232658812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27569e5bce46744a9f6138c6ed52b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementSpeed: 5
+  RotationSpeed: 90
+  InitLife: 2
 --- !u!1001 &336950621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5090,6 +5106,7 @@ GameObject:
   - component: {fileID: 337992202}
   - component: {fileID: 337992201}
   - component: {fileID: 337992203}
+  - component: {fileID: 337992204}
   m_Layer: 0
   m_Name: GreenBunny
   m_TagString: Enemy
@@ -5121,7 +5138,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337992199}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1
   m_Height: 1
@@ -5165,6 +5182,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &337992204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337992199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27569e5bce46744a9f6138c6ed52b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementSpeed: 5
+  RotationSpeed: 90
+  InitLife: 2
 --- !u!1 &348146519
 GameObject:
   m_ObjectHideFlags: 0
@@ -5487,11 +5519,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047078961591824063, guid: 2f67feb44997b364a9e4533cdb6d0657,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f67feb44997b364a9e4533cdb6d0657, type: 3}
@@ -10808,6 +10835,7 @@ GameObject:
   - component: {fileID: 1499635336}
   - component: {fileID: 1499635335}
   - component: {fileID: 1499635337}
+  - component: {fileID: 1499635338}
   m_Layer: 0
   m_Name: BlueBunny
   m_TagString: Enemy
@@ -10839,7 +10867,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499635333}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1
   m_Height: 1
@@ -10883,6 +10911,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1499635338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499635333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27569e5bce46744a9f6138c6ed52b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementSpeed: 5
+  RotationSpeed: 90
+  InitLife: 2
 --- !u!1001 &1541666219
 PrefabInstance:
   m_ObjectHideFlags: 0
