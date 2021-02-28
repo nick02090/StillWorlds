@@ -15,7 +15,6 @@ namespace AI.Enemy.States
             name = State.SEARCH;
             searchPath = enemyCharacter.GetSearchPath();
             currentTargetPoint = searchPath.GetNext();
-            currentTargetPoint.y = enemyGameObject.transform.position.y;
         }
 
         public override void Enter()
@@ -33,7 +32,6 @@ namespace AI.Enemy.States
                 // Check if you can see him
                 if (CanSeePlayer())
                 {
-                    Debug.Log("I heard him, saw him and now im attacking");
                     // Attack him
                     nextState = new AttackingState(enemyGameObject, agent, playerGameObject, enemyCharacter);
                     stage = Event.EXIT;
@@ -41,7 +39,6 @@ namespace AI.Enemy.States
                 }
                 else
                 {
-                    Debug.Log("I heard him and now im chasing");
                     // Go towards the hearing sound
                     nextState = new ChaseState(enemyGameObject, agent, playerGameObject, enemyCharacter);
                     stage = Event.EXIT;
@@ -49,7 +46,6 @@ namespace AI.Enemy.States
                 }
             }
 
-            Debug.Log("Resuming my path to the target");
             // Move our position a step closer to the target.
             float step = enemyCharacter.GetMovementSpeed() * Time.deltaTime; // calculate distance to move
             enemyGameObject.transform.position = Vector3.MoveTowards(enemyGameObject.transform.position, currentTargetPoint, step);
@@ -63,8 +59,6 @@ namespace AI.Enemy.States
             {
                 // Get the next point
                 currentTargetPoint = searchPath.GetNext();
-                currentTargetPoint.y = enemyGameObject.transform.position.y;
-                Debug.Log("Changing the target");
             }
         }
 

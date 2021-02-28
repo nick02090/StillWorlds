@@ -293,6 +293,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2367113324056571212}
     m_Modifications:
+    - target: {fileID: 1578439646, guid: 4d64639e0b92df64d8065ddb38375384, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.52156866
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578439646, guid: 4d64639e0b92df64d8065ddb38375384, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.28627452
+      objectReference: {fileID: 0}
     - target: {fileID: 4010965279447099417, guid: 4d64639e0b92df64d8065ddb38375384,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -352,8 +360,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 4747788434723500390, guid: a6322a00823806147a236981d3112313,
-        type: 3}
+      objectReference: {fileID: 3677140838509854446}
     - target: {fileID: 4010965279447099423, guid: 4d64639e0b92df64d8065ddb38375384,
         type: 3}
       propertyPath: m_Name
@@ -364,6 +371,12 @@ PrefabInstance:
 --- !u!4 &1688958357242036057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010965279447099417, guid: 4d64639e0b92df64d8065ddb38375384,
+    type: 3}
+  m_PrefabInstance: {fileID: 2367113323730179904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3677140838509854446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1431714888295524782, guid: 4d64639e0b92df64d8065ddb38375384,
     type: 3}
   m_PrefabInstance: {fileID: 2367113323730179904}
   m_PrefabAsset: {fileID: 0}

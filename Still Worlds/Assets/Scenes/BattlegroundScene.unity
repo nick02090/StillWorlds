@@ -5015,6 +5015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WalkParticle: {fileID: 2060612282}
+  PoolManager: {fileID: 1575893057}
 --- !u!1001 &336950621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5247,6 +5248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WalkParticle: {fileID: 135385444}
+  PoolManager: {fileID: 0}
 --- !u!1 &348146519
 GameObject:
   m_ObjectHideFlags: 0
@@ -11019,6 +11021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WalkParticle: {fileID: 2001500827}
+  PoolManager: {fileID: 0}
 --- !u!1001 &1541666219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11119,6 +11122,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1541666219}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1575893057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1688958357242036062, guid: 43a81d2a58005fd48bd16f47c93d9d7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2367113323724832584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadc8bcc69553aa41890300f134cc6fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1579006302
 GameObject:
   m_ObjectHideFlags: 0

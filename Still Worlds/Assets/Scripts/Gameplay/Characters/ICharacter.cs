@@ -20,5 +20,6 @@ namespace Gameplay.Characters
         float GetVisionAngle();
         SearchPath GetSearchPath();
         void SetRotation(Quaternion rotation);
+        Vector3 GetSpawnLocation();
     }
 }

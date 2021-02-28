@@ -126,6 +126,11 @@ namespace Gameplay.Characters
         {
             m_rotation = _rotation;
         }
+
+        public Vector3 GetSpawnLocation()
+        {
+            return spawnLocation.Location;
+        }
         #endregion
     }
 }

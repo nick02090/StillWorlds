@@ -90,6 +90,11 @@ namespace Gameplay.Characters
         {
             throw new System.NotImplementedException();
         }
+
+        public Vector3 GetSpawnLocation()
+        {
+            throw new System.NotImplementedException();
+        }
         #endregion
     }
 }

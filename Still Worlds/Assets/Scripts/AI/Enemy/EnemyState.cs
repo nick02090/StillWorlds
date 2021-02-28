@@ -6,6 +6,9 @@ namespace AI.Enemy
 {
     public class EnemyState : IState
     {
+        public delegate void OnAttack();
+        public static OnAttack onAttack;
+
         public enum State
         {
             IDLE, SEARCH, CHASE, ATTACKING
@@ -62,8 +65,11 @@ namespace AI.Enemy
         {
             var lookPos = y_position - gameObject.transform.position;
             lookPos.y = 0;
-            var rotation = Quaternion.LookRotation(lookPos);
-            enemyCharacter.SetRotation(rotation);
+            if (lookPos != Vector3.zero)
+            {
+                var rotation = Quaternion.LookRotation(lookPos);
+                enemyCharacter.SetRotation(rotation);
+            }
         }
 
         protected void TurnTowardsPlayer()

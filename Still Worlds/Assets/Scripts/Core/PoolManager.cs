@@ -10,7 +10,7 @@ namespace Core
 
         public List<GameObject> bulletList;
 
-        private void Start()
+        private void Awake()
         {
             for (int i = 0; i < spawnCount; i++)
             {

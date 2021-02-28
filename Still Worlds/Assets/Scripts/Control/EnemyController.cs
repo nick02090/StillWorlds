@@ -1,6 +1,7 @@
 ﻿using AI;
 using AI.Enemy;
 using AI.Enemy.States;
+using Core;
 using Gameplay.Characters;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,6 +11,7 @@ namespace Control
     public class EnemyController : MonoBehaviour
     {
         public ParticleSystem WalkParticle;
+        public PoolManager PoolManager;
 
         private FSMAI ai;
         private NavMeshAgent agent;
@@ -25,6 +27,7 @@ namespace Control
             // Initialize AI
             GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
             EnemyState startingState = new SearchState(gameObject, agent, playerGameObject, enemyCharacter);
+            EnemyState.onAttack += OnAttack;
             ai = new FSMAI(startingState);
             // Initialize starting position
             lastPosition = transform.position;
@@ -33,7 +36,7 @@ namespace Control
         private void FixedUpdate()
         {
             // Play the walking position
-            if (transform.position != lastPosition)
+            if (Vector3.Distance(transform.position, lastPosition) > 0.001f)
             {
                 WalkParticle.Play();
             }
@@ -49,6 +52,12 @@ namespace Control
         {
             // Update the AI
             ai.Update();
+        }
+
+        public void OnAttack()
+        {
+            enemyCharacter.Attack();
+            PoolManager.CreateNext(GetComponent<Collider>(), transform.position + transform.forward + transform.up, transform.forward);
         }
     }
 }
