@@ -12,7 +12,7 @@ namespace Gameplay.Characters
         private Interactor interactor = null;
         private Portal portal = null;
 
-        private HUD hud;
+        private HUD hud = null;
 
         private int life = 1;
         private int kill = 0;
@@ -24,17 +24,27 @@ namespace Gameplay.Characters
             {
                 Debug.LogError("More than one HUD has been found here!");
             }
-            hud = hudObjects[0].GetComponent<HUD>();
-            // Set HUD initial parameters
-            hud.UpdateLife(life);
-            hud.UpdateKill(kill);
+            else if (hudObjects.Length == 0)
+            {
+                hud = null;
+            }
+            else
+            {
+                hud = hudObjects[0].GetComponent<HUD>();
+                // Set HUD initial parameters
+                hud.UpdateLife(life);
+                hud.UpdateKill(kill);
+            }
         }
 
         public void Update()
         {
-            // Update life parameters
-            hud.UpdateLife(life);
-            hud.UpdateKill(kill);
+            if (hud != null)
+            {
+                // Update life parameters
+                hud.UpdateLife(life);
+                hud.UpdateKill(kill);
+            }
         }
 
         public void OnTriggerEnter(Collider other)

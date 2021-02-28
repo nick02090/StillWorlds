@@ -44,7 +44,7 @@ namespace Gameplay.Interactors
             // Start a dialogue
             messageIndex = 0;
             dialogue.SetName(interactorName);
-            dialogue.StartDialogue(messages[intercationIndex].Get(messageIndex));
+            dialogue.StartDialogue(messages[intercationIndex].Get(messageIndex), messages[intercationIndex].Size());
         }
 
         public void FinishInteraction()

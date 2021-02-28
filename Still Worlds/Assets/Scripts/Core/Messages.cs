@@ -15,5 +15,10 @@ namespace Core
         {
             return index >= messages.Length;
         }
+
+        public int Size()
+        {
+            return messages.Length;
+        }
     }
 }

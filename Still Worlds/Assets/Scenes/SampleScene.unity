@@ -353,8 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Hahaha...
-  - Scared much?
+  - Hahaha... Scared much?
 --- !u!1 &186899898
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,25 +952,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Hello foreigner. It is me - DEATH.
-  - Yes, one and only god of everything.
-  - And this - this is my chamber and my personal world - Still Worlds; from where
-    I keep all the worlds at peace.
-  - I have brought you here to do me a favor of sorts - a few tasks if you will.
-  - 'Anyways, rules here are simple: no killing!'
-  - I guess that goes for every other world, not just the Still Worlds.
-  - 'But here, there''s an extra catch: there''s no attacking either.'
+  - Hello foreigner. It is me - DEATH. Yes, one and only god of everything. And this
+    - this is my chamber and my personal world - Still Worlds; from where I keep
+    all the worlds at peace. I have brought you here to do me a favor of sorts -
+    a few tasks if you will.
+  - 'Anyways, rules here are simple: no killing! I guess that goes for every other
+    world, not just the Still Worlds. But here, there''s an extra catch: there''s
+    no attacking either.'
   - Though you may attack but every time you attack anyone - you will lose one LIFE.
-  - If anyone tries to attack you - he will also lose a LIFE. Eye for an eye, eh?
-  - In general, you can attack but you must not kill anyone you encounter here.
+    If anyone tries to attack you - he will also lose a LIFE. Eye for an eye, eh?
+    In general, you can attack but you must not kill anyone you encounter here.
   - To be sure of your self pledged "no killing" policy, I will personally watch
-    over your every move.
-  - One kill - and you're back to the beginning!
-  - 'Now, about your tasks... I desire only one thing from you: find the LIFE source!'
-  - Many creatures in here have managed to gain more than one LIFE by going to this
-    source.
-  - Those creatures are violent and are hungry for killing. They do not fear me,
-    they worship the LIFE.
+    over your every move. One kill - and you're back to the beginning!
+  - 'Now, about your tasks... I desire only one thing from you: find the LIFE source!
+    Many creatures in here have managed to gain more than one LIFE by going to this
+    source. Those creatures are violent and are hungry for killing. They do not fear
+    me, they worship the LIFE.'
   - They - must - be - STOPPED!
 --- !u!4 &626984190
 Transform:
@@ -1224,8 +1220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Go off now!
-  - What are you waiting for?!
+  - Go off now! What are you waiting for?!
 --- !u!4 &920533235
 Transform:
   m_ObjectHideFlags: 0
@@ -1284,8 +1279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - I made a portal for you.
-  - Turn around and get into it.
+  - I made a portal for you. Turn around and get into it.
 --- !u!1 &1113895577
 GameObject:
   m_ObjectHideFlags: 0
