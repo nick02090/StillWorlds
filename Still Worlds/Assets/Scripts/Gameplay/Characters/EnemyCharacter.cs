@@ -8,6 +8,11 @@ namespace Gameplay.Characters
         public float MovementSpeed;
         public float RotationSpeed;
         public int InitLife;
+        public float visionDistance;
+        public float hearingDistance;
+        public float visionAngle;
+
+        public SpawnLocation spawnLocation;
 
         private int life;
 
@@ -15,6 +20,10 @@ namespace Gameplay.Characters
         {
             // Initialize member variables
             life = InitLife;
+
+            // Set initial spawn location
+            transform.position = spawnLocation.Location;
+            transform.rotation = Quaternion.identity;
         }
 
         private void Update()
@@ -23,6 +32,12 @@ namespace Gameplay.Characters
             {
                 Destroy(gameObject);
             }
+        }
+
+        public void Resume()
+        {
+            transform.position = spawnLocation.Location;
+            transform.rotation = Quaternion.identity;
         }
 
         #region ICharacter
@@ -80,6 +95,21 @@ namespace Gameplay.Characters
             int currentLife = GetLife();
             currentLife--;
             SetLife(currentLife);
+        }
+
+        public float GetVisionDistance()
+        {
+            return visionDistance;
+        }
+
+        public float GetHearingDistance()
+        {
+            return hearingDistance;
+        }
+
+        public float GetVisionAngle()
+        {
+            return visionDistance;
         }
         #endregion
     }

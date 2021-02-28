@@ -14,5 +14,8 @@ namespace Gameplay.Characters
         void TakeHit();
         int GetKill();
         void SetKill(int kill);
+        float GetVisionDistance();
+        float GetHearingDistance();
+        float GetVisionAngle();
     }
 }

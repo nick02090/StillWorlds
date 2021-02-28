@@ -1001,7 +1001,7 @@ MonoBehaviour:
     a few tasks if you will.
   - 'Anyways, rules here are simple: no killing! Even if it means killing yourself
     (aka suicide). I guess that goes for every other world, not just the Still Worlds.
-    But here, there''s an extra catch: there''s no attacking either.'
+    But here, there''s an extra catch: attacking can get you killed too.'
   - Though you may attack but every time you attack anyone - you will lose one LIFE.
     If anyone tries to attack you - he will also lose a LIFE. Eye for an eye, eh?
     In general, you can attack but you must not kill anyone you encounter here.
@@ -2681,7 +2681,7 @@ PrefabInstance:
     - target: {fileID: 5345957363880801261, guid: 145204a363483b94e8df66e91d8787a9,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5345957363880801262, guid: 145204a363483b94e8df66e91d8787a9,
         type: 3}

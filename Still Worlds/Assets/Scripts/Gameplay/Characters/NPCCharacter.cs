@@ -65,6 +65,21 @@ namespace Gameplay.Characters
         {
             throw new System.NotImplementedException();
         }
+
+        public float GetVisionDistance()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public float GetHearingDistance()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public float GetVisionAngle()
+        {
+            throw new System.NotImplementedException();
+        }
         #endregion
     }
 }
