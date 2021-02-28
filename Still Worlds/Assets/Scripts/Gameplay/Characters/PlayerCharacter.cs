@@ -13,12 +13,14 @@ namespace Gameplay.Characters
         private Portal portal = null;
 
         private HUD hud = null;
+        private GameObject deathScreen;
 
         private int life = 1;
         private int kill = 0;
 
         public void Start()
         {
+            // Initialize HUD
             GameObject[] hudObjects = GameObject.FindGameObjectsWithTag("HUD");
             if (hudObjects.Length > 1)
             {
@@ -35,6 +37,20 @@ namespace Gameplay.Characters
                 hud.UpdateLife(life);
                 hud.UpdateKill(kill);
             }
+
+            // Initialize death screen
+            GameObject[] deathScreenObjects = GameObject.FindGameObjectsWithTag("DeathScreen");
+            if (deathScreenObjects.Length > 1)
+            {
+                Debug.LogError("More than one death screen has been found here!");
+            }
+            deathScreen = deathScreenObjects[0].transform.GetChild(0).gameObject;
+        }
+
+        public void Resume()
+        {
+            life = 1;
+            deathScreen.SetActive(false);
         }
 
         public void Update()
@@ -44,6 +60,10 @@ namespace Gameplay.Characters
                 // Update life parameters
                 hud.UpdateLife(life);
                 hud.UpdateKill(kill);
+            }
+            if (life <= 0)
+            {
+                deathScreen.SetActive(true);
             }
         }
 
@@ -107,6 +127,12 @@ namespace Gameplay.Characters
         public void SetLife(int _life)
         {
             life = _life;
+            if (life <= 0)
+            {
+                int currentKill = GetKill();
+                currentKill++;
+                SetKill(currentKill);
+            }
         }
 
         public int GetKill()

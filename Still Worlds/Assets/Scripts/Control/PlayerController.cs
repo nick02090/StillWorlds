@@ -21,9 +21,10 @@ namespace Control
 
         private void FixedUpdate()
         {
-            if (!isInteracting)
+            if (!isInteracting & playerCharacter.GetLife() > 0)
             {
                 MovePlayer();
+                Attack();
             }
         }
 
@@ -45,6 +46,14 @@ namespace Control
             else
             {
                 WalkParticle.Stop();
+            }
+        }
+
+        private void Attack()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                playerCharacter.Attack();
             }
         }
 

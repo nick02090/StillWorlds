@@ -8,6 +8,7 @@ TagManager:
   - Dialogue
   - Portal
   - HUD
+  - DeathScreen
   layers:
   - Default
   - TransparentFX
