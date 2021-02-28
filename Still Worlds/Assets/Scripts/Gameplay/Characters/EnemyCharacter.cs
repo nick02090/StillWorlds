@@ -12,7 +12,8 @@ namespace Gameplay.Characters
         public float hearingDistance;
         public float visionAngle;
 
-        public SpawnLocation spawnLocation;
+        public WorldPoint spawnLocation;
+        public SearchPath searchPath;
 
         private int life;
 
@@ -110,6 +111,11 @@ namespace Gameplay.Characters
         public float GetVisionAngle()
         {
             return visionDistance;
+        }
+
+        public SearchPath GetSearchPath()
+        {
+            return searchPath;
         }
         #endregion
     }

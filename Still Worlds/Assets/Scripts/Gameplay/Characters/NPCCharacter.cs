@@ -80,6 +80,11 @@ namespace Gameplay.Characters
         {
             throw new System.NotImplementedException();
         }
+
+        public SearchPath GetSearchPath()
+        {
+            throw new System.NotImplementedException();
+        }
         #endregion
     }
 }

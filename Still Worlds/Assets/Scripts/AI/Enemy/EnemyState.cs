@@ -84,12 +84,12 @@ namespace AI.Enemy
         }
 
         #region IState
-        public void Enter()
+        public virtual void Enter()
         {
             stage = Event.UPDATE;
         }
 
-        public void Exit()
+        public virtual void Exit()
         {
             stage = Event.EXIT;
         }
@@ -106,7 +106,7 @@ namespace AI.Enemy
             return this;
         }
 
-        public void Update()
+        public virtual void Update()
         {
             stage = Event.UPDATE;
         }

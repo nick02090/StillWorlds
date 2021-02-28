@@ -8,7 +8,7 @@ namespace Gameplay.Characters
     {
         public float MovementSpeed = 1.0f;
         public float RotationSpeed = 1.0f;
-        public SpawnLocation spawnLocation;
+        public WorldPoint spawnLocation;
 
         private Interactor interactor = null;
         private Portal portal = null;
@@ -187,6 +187,11 @@ namespace Gameplay.Characters
         }
 
         public float GetVisionAngle()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public SearchPath GetSearchPath()
         {
             throw new System.NotImplementedException();
         }

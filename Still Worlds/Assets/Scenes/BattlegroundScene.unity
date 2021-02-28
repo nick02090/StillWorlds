@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 3786cbea3d18e0d4a89dd17707f3cbf2, type: 2}
+--- !u!114 &108091130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 108091130, guid: 3b0167d55b82e4140954c8ece301345c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5732215201651731907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b106aecb19078a54aa34ab357d3403ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &135385441
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +243,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -407,7 +419,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9607843, g: 0, b: 0.009043638, a: 1}
+      maxColor: {r: 0, g: 0.3679245, b: 0.06921357, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4894,6 +4906,7 @@ GameObject:
   - component: {fileID: 232658814}
   - component: {fileID: 232658816}
   - component: {fileID: 232658817}
+  - component: {fileID: 232658818}
   m_Layer: 0
   m_Name: RedBunny
   m_TagString: Enemy
@@ -4984,7 +4997,24 @@ MonoBehaviour:
   MovementSpeed: 5
   RotationSpeed: 90
   InitLife: 2
+  visionDistance: 0
+  hearingDistance: 0
+  visionAngle: 0
   spawnLocation: {fileID: 2367113323724832585}
+  searchPath: {fileID: 1301783664}
+--- !u!114 &232658818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232658812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec83b0e97dcfd7489e5e6a72bd3a2a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WalkParticle: {fileID: 2060612282}
 --- !u!1001 &336950621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5108,6 +5138,7 @@ GameObject:
   - component: {fileID: 337992201}
   - component: {fileID: 337992203}
   - component: {fileID: 337992204}
+  - component: {fileID: 337992205}
   m_Layer: 0
   m_Name: GreenBunny
   m_TagString: Enemy
@@ -5198,7 +5229,24 @@ MonoBehaviour:
   MovementSpeed: 5
   RotationSpeed: 90
   InitLife: 2
+  visionDistance: 0
+  hearingDistance: 0
+  visionAngle: 0
   spawnLocation: {fileID: 6677942613976190901}
+  searchPath: {fileID: 1400007544}
+--- !u!114 &337992205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337992199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec83b0e97dcfd7489e5e6a72bd3a2a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WalkParticle: {fileID: 135385444}
 --- !u!1 &348146519
 GameObject:
   m_ObjectHideFlags: 0
@@ -5978,6 +6026,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1301783664 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1301783664, guid: 43a81d2a58005fd48bd16f47c93d9d7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2367113323724832584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b106aecb19078a54aa34ab357d3403ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1355359583
 GameObject:
   m_ObjectHideFlags: 0
@@ -6071,6 +6131,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355359583}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1400007544 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1400007544, guid: 0c07979253014214eb33a7ad3492f3e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6677942613976190900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b106aecb19078a54aa34ab357d3403ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1460111570
 GameObject:
   m_ObjectHideFlags: 0
@@ -10838,6 +10910,7 @@ GameObject:
   - component: {fileID: 1499635335}
   - component: {fileID: 1499635337}
   - component: {fileID: 1499635338}
+  - component: {fileID: 1499635339}
   m_Layer: 0
   m_Name: BlueBunny
   m_TagString: Enemy
@@ -10928,7 +11001,24 @@ MonoBehaviour:
   MovementSpeed: 5
   RotationSpeed: 90
   InitLife: 2
+  visionDistance: 0
+  hearingDistance: 0
+  visionAngle: 0
   spawnLocation: {fileID: 5732215201651731908}
+  searchPath: {fileID: 108091130}
+--- !u!114 &1499635339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499635333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec83b0e97dcfd7489e5e6a72bd3a2a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WalkParticle: {fileID: 2001500827}
 --- !u!1001 &1541666219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16306,7 +16396,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.4723503, b: 0.9622642, a: 1}
+      maxColor: {r: 0.0061409646, g: 0.2156861, b: 0.4339623, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -21221,7 +21311,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9607843, g: 0, b: 0.009043638, a: 1}
+      maxColor: {r: 0.52156866, g: 0, b: 0.28627452, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -30662,11 +30752,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2119144739}
     m_Modifications:
-    - target: {fileID: 2367113323490981127, guid: 43a81d2a58005fd48bd16f47c93d9d7e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.56
-      objectReference: {fileID: 0}
     - target: {fileID: 2367113324056571211, guid: 43a81d2a58005fd48bd16f47c93d9d7e,
         type: 3}
       propertyPath: m_Name
@@ -31153,11 +31238,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677942614770056850, guid: 0c07979253014214eb33a7ad3492f3e6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.66
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c07979253014214eb33a7ad3492f3e6, type: 3}

@@ -2,7 +2,7 @@
 
 namespace Gameplay
 {
-    public class SpawnLocation : MonoBehaviour
+    public class WorldPoint : MonoBehaviour
     {
         public Vector3 Location => transform.position;
 

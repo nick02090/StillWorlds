@@ -17,5 +17,6 @@ namespace Gameplay.Characters
         float GetVisionDistance();
         float GetHearingDistance();
         float GetVisionAngle();
+        SearchPath GetSearchPath();
     }
 }
