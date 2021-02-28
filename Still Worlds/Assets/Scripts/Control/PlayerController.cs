@@ -9,6 +9,7 @@ namespace Control
     public class PlayerController : MonoBehaviour
     {
         public ParticleSystem WalkParticle;
+        public bool enableAttack = true;
 
         private ICharacter playerCharacter;
         private bool isInteracting = false;
@@ -24,7 +25,10 @@ namespace Control
             if (!isInteracting & playerCharacter.GetLife() > 0)
             {
                 MovePlayer();
-                Attack();
+                if (enableAttack)
+                {
+                    Attack();
+                }
             }
         }
 

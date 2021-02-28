@@ -956,9 +956,9 @@ MonoBehaviour:
     - this is my chamber and my personal world - Still Worlds; from where I keep
     all the worlds at peace. I have brought you here to do me a favor of sorts -
     a few tasks if you will.
-  - 'Anyways, rules here are simple: no killing! I guess that goes for every other
-    world, not just the Still Worlds. But here, there''s an extra catch: there''s
-    no attacking either.'
+  - 'Anyways, rules here are simple: no killing! Even if it means killing yourself
+    (aka suicide). I guess that goes for every other world, not just the Still Worlds.
+    But here, there''s an extra catch: there''s no attacking either.'
   - Though you may attack but every time you attack anyone - you will lose one LIFE.
     If anyone tries to attack you - he will also lose a LIFE. Eye for an eye, eh?
     In general, you can attack but you must not kill anyone you encounter here.
@@ -1631,6 +1631,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2310675853461868867, guid: 2f67feb44997b364a9e4533cdb6d0657,
+        type: 3}
+      propertyPath: enableAttack
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2439656755589845132, guid: 2f67feb44997b364a9e4533cdb6d0657,
         type: 3}
       propertyPath: m_Name

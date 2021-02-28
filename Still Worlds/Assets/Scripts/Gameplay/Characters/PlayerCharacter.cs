@@ -44,7 +44,14 @@ namespace Gameplay.Characters
             {
                 Debug.LogError("More than one death screen has been found here!");
             }
-            deathScreen = deathScreenObjects[0].transform.GetChild(0).gameObject;
+            else if (deathScreenObjects.Length == 0)
+            {
+                deathScreen = null;
+            }
+            else
+            {
+                deathScreen = deathScreenObjects[0].transform.GetChild(0).gameObject;
+            }
         }
 
         public void Resume()
