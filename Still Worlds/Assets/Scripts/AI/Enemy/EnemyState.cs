@@ -58,17 +58,17 @@ namespace AI.Enemy
             return false;
         }
 
-        protected void TurnXTowardsY(GameObject x, GameObject y, float rotationSpeed)
+        protected void TurnXTowardsY(GameObject gameObject, Vector3 y_position)
         {
-            Vector3 direction = (y.transform.position - x.transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(direction);
-
-            x.transform.rotation = Quaternion.Slerp(x.transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+            var lookPos = y_position - gameObject.transform.position;
+            lookPos.y = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            enemyCharacter.SetRotation(rotation);
         }
 
-        protected void TurnTowardsPlayer(float rotationSpeed)
+        protected void TurnTowardsPlayer()
         {
-            TurnXTowardsY(enemyGameObject, playerGameObject, rotationSpeed);
+            TurnXTowardsY(enemyGameObject, playerGameObject.transform.position);
         }
 
         protected bool CanSeePlayer()

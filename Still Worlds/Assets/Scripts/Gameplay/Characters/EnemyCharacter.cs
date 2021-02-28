@@ -16,6 +16,7 @@ namespace Gameplay.Characters
         public SearchPath searchPath;
 
         private int life;
+        private Quaternion m_rotation;
 
         private void Start()
         {
@@ -29,10 +30,13 @@ namespace Gameplay.Characters
 
         private void Update()
         {
+            // Destroy if killed
             if (life <= 0)
             {
                 Destroy(gameObject);
             }
+            // Update the rotation
+            gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, m_rotation, Time.deltaTime * RotationSpeed);
         }
 
         public void Resume()
@@ -116,6 +120,11 @@ namespace Gameplay.Characters
         public SearchPath GetSearchPath()
         {
             return searchPath;
+        }
+
+        public void SetRotation(Quaternion _rotation)
+        {
+            m_rotation = _rotation;
         }
         #endregion
     }

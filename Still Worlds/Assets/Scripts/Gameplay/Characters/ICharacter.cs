@@ -1,4 +1,5 @@
 ﻿using Gameplay.Interactors;
+using UnityEngine;
 
 namespace Gameplay.Characters
 {
@@ -18,5 +19,6 @@ namespace Gameplay.Characters
         float GetHearingDistance();
         float GetVisionAngle();
         SearchPath GetSearchPath();
+        void SetRotation(Quaternion rotation);
     }
 }

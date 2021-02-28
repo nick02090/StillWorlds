@@ -17,7 +17,7 @@ namespace Control
 
         private Vector3 lastPosition;
 
-        void Start()
+        private void Start()
         {
             // Initialize member variables
             agent = GetComponent<NavMeshAgent>();

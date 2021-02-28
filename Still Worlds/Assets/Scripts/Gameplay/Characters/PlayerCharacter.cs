@@ -195,6 +195,11 @@ namespace Gameplay.Characters
         {
             throw new System.NotImplementedException();
         }
+
+        public void SetRotation(Quaternion rotation)
+        {
+            throw new System.NotImplementedException();
+        }
         #endregion
     }
 }

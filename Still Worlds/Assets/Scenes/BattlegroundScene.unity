@@ -4997,9 +4997,9 @@ MonoBehaviour:
   MovementSpeed: 5
   RotationSpeed: 90
   InitLife: 2
-  visionDistance: 0
-  hearingDistance: 0
-  visionAngle: 0
+  visionDistance: 10
+  hearingDistance: 20
+  visionAngle: 30
   spawnLocation: {fileID: 2367113323724832585}
   searchPath: {fileID: 1301783664}
 --- !u!114 &232658818
@@ -5145,7 +5145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &337992200
 Transform:
   m_ObjectHideFlags: 0
@@ -5229,9 +5229,9 @@ MonoBehaviour:
   MovementSpeed: 5
   RotationSpeed: 90
   InitLife: 2
-  visionDistance: 0
-  hearingDistance: 0
-  visionAngle: 0
+  visionDistance: 10
+  hearingDistance: 20
+  visionAngle: 30
   spawnLocation: {fileID: 6677942613976190901}
   searchPath: {fileID: 1400007544}
 --- !u!114 &337992205
@@ -10917,7 +10917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1499635334
 Transform:
   m_ObjectHideFlags: 0
@@ -11001,9 +11001,9 @@ MonoBehaviour:
   MovementSpeed: 5
   RotationSpeed: 90
   InitLife: 2
-  visionDistance: 0
-  hearingDistance: 0
-  visionAngle: 0
+  visionDistance: 10
+  hearingDistance: 20
+  visionAngle: 30
   spawnLocation: {fileID: 5732215201651731908}
   searchPath: {fileID: 108091130}
 --- !u!114 &1499635339
