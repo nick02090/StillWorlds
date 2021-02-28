@@ -54,10 +54,6 @@ namespace Control
             }
             // Update the position
             lastPosition = transform.position;
-        }
-
-        private void Update()
-        {
             // Update the AI
             ai.Update();
         }

@@ -7,8 +7,9 @@ namespace AI.Enemy.States
     public class AttackingState : EnemyState
     {
         float lastAttackTime = 0.0f;
+
         // Seconds between to enemy attacks
-        float attackHoldup = 2.0f;
+        readonly float attackHoldup = 2.0f;
 
         public AttackingState(GameObject _enemy, NavMeshAgent _agent, GameObject _player, ICharacter _enemyCharacter) : base(_enemy, _agent, _player, _enemyCharacter)
         {

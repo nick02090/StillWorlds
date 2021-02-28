@@ -1,4 +1,5 @@
 ﻿using Gameplay.Interactors;
+using System.Linq;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ namespace Gameplay.Characters
         public float MovementSpeed = 1.0f;
         public float RotationSpeed = 1.0f;
         public WorldPoint spawnLocation;
+        public bool isBattleLocation = true;
+        public Portal Portal;
 
         private Interactor interactor = null;
         private Portal portal = null;
@@ -95,6 +98,20 @@ namespace Gameplay.Characters
                 }
                 deathScreenPanel.SetActive(true);
                 Time.timeScale = 0f;
+            }
+            if (isBattleLocation)
+            {
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                // Show portal if all of the enemies are killed
+                if (enemies.Length == 0)
+                {
+                    Portal.gameObject.SetActive(true);
+                }
+                // Show portal if all of the enemies have 1 LIFE
+                if (enemies.All(x => x.GetComponent<ICharacter>().GetLife() == 1))
+                {
+                    Portal.gameObject.SetActive(true);
+                }
             }
         }
 
