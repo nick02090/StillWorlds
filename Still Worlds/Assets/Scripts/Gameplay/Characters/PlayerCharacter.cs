@@ -8,6 +8,7 @@ namespace Gameplay.Characters
     {
         public float MovementSpeed = 1.0f;
         public float RotationSpeed = 1.0f;
+        public SpawnLocation spawnLocation;
 
         private Interactor interactor = null;
         private Portal portal = null;
@@ -52,12 +53,16 @@ namespace Gameplay.Characters
             {
                 deathScreen = deathScreenObjects[0].transform.GetChild(0).gameObject;
             }
+
+            // Set initial spawn location
+            transform.position = spawnLocation.Location;
         }
 
         public void Resume()
         {
             life = 1;
             deathScreen.SetActive(false);
+            transform.position = spawnLocation.Location;
         }
 
         public void Update()

@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 10
   RotationSpeed: 180
+  spawnLocation: {fileID: 0}
 --- !u!114 &2310675853461868867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WalkParticle: {fileID: 2020685781408640980}
+  enableAttack: 1
   deltaTime: 0
 --- !u!136 &8819440529875928182
 CapsuleCollider:
