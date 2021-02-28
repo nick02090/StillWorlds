@@ -9,6 +9,7 @@ TagManager:
   - Portal
   - HUD
   - DeathScreen
+  - Enemy
   layers:
   - Default
   - TransparentFX

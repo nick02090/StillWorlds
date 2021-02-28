@@ -5,14 +5,6 @@ namespace Core
 {
     public class PoolManager : MonoBehaviour
     {
-        #region Singleton
-        public static PoolManager instance;
-        private void Awake()
-        {
-            instance = this;
-        }
-        #endregion
-
         public GameObject bullet;
         public int spawnCount;
 

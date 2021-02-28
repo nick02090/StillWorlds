@@ -11,18 +11,15 @@ namespace Control
     {
         public ParticleSystem WalkParticle;
         public bool enableAttack = true;
+        public PoolManager PoolManager;
 
         private ICharacter playerCharacter;
         private bool isInteracting = false;
-
-
-        private PoolManager poolManager;
 
         private void Start()
         {
             // Initialize member variables
             playerCharacter = GetComponent<PlayerCharacter>();
-            poolManager = PoolManager.instance;
         }
 
         private void FixedUpdate()
@@ -73,7 +70,7 @@ namespace Control
             if (Input.GetMouseButtonDown(0))
             {
                 playerCharacter.Attack();
-                poolManager.CreateNext(GetComponent<Collider>(), transform.position + transform.forward + transform.up, transform.forward);
+                PoolManager.CreateNext(GetComponent<Collider>(), transform.position + transform.forward + transform.up, transform.forward);
             }
         }
 
