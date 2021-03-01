@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShootScene.unity
     guid: 708dbd0c29634df4b89de415e52162bf
+  - enabled: 1
+    path: Assets/Scenes/PuzzleScene.unity
+    guid: 4821bea61f52a0a4e8d943edead64b79
   m_configObjects: {}

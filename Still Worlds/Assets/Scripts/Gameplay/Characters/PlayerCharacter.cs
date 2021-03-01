@@ -65,6 +65,9 @@ namespace Gameplay.Characters
             // Set initial spawn location
             transform.position = spawnLocation.Location;
             transform.rotation = Quaternion.identity;
+
+            // Hide cursor on start
+            Cursor.visible = false;
         }
 
         public void Resume()
@@ -75,6 +78,7 @@ namespace Gameplay.Characters
             transform.position = spawnLocation.Location;
             transform.rotation = Quaternion.identity;
             Time.timeScale = 1f;
+            Cursor.visible = false;
         }
 
         public void Update()
@@ -98,6 +102,7 @@ namespace Gameplay.Characters
                 }
                 deathScreenPanel.SetActive(true);
                 Time.timeScale = 0f;
+                Cursor.visible = true;
             }
             if (isBattleLocation)
             {
