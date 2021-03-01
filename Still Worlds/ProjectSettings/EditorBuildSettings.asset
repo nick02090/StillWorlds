@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ConvertScene.unity
     guid: 11847ce068e133444b0eff7caadb66b3
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: 0503e896ec2590248b9caabb923f57b0
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 9dd12b70b09829b45911a9237f7e46ae
   m_configObjects: {}
