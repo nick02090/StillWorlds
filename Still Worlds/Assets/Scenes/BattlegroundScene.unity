@@ -612,6 +612,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 336950622}
+    - target: {fileID: 8389101489570016674, guid: 145204a363483b94e8df66e91d8787a9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389101489570016674, guid: 145204a363483b94e8df66e91d8787a9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389101489570016674, guid: 145204a363483b94e8df66e91d8787a9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 145204a363483b94e8df66e91d8787a9, type: 3}
 --- !u!1 &374655143
@@ -4576,7 +4591,8 @@ PrefabInstance:
     - target: {fileID: 8760051051391778706, guid: 074f402f670e0fb45894c54e29916f2c,
         type: 3}
       propertyPath: messages.Array.data[1]
-      value: The portal to next area will show once every enemy has 1 LIFE remaining.
+      value: The portal to the next area will appear once every enemy has 1 LIFE
+        remaining.
       objectReference: {fileID: 0}
     - target: {fileID: 8760051051406434272, guid: 074f402f670e0fb45894c54e29916f2c,
         type: 3}
