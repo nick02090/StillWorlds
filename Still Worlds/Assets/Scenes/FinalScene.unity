@@ -4625,11 +4625,6 @@ PrefabInstance:
       propertyPath: searchPath
       value: 
       objectReference: {fileID: 1123134175}
-    - target: {fileID: 2118216372919374213, guid: 744673855d43a104b9a4f2151286e590,
-        type: 3}
-      propertyPath: InitLife
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2118216372919374222, guid: 744673855d43a104b9a4f2151286e590,
         type: 3}
       propertyPath: m_Name

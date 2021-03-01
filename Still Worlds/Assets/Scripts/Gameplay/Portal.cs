@@ -9,10 +9,17 @@ namespace Gameplay
     {
         public Text InteractionButton;
         public int sceneToLoad;
+        public AudioClip sound;
 
         private void Start()
         {
             HideInteraction();
+        }
+
+        private void Update()
+        {
+            if (gameObject.activeInHierarchy & sound)
+                GetComponent<AudioSource>().PlayOneShot(sound);
         }
 
         public void HideInteraction()

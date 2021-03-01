@@ -1890,6 +1890,11 @@ PrefabInstance:
       propertyPath: PauseScreenPanel
       value: 
       objectReference: {fileID: 202834786}
+    - target: {fileID: 2310675853461868867, guid: 2f67feb44997b364a9e4533cdb6d0657,
+        type: 3}
+      propertyPath: walkSound
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2439656755589845132, guid: 2f67feb44997b364a9e4533cdb6d0657,
         type: 3}
       propertyPath: m_Name

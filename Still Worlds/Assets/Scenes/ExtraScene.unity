@@ -3507,11 +3507,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3754212819229557362, guid: 97a211546a827474a94fb2a8a6377598,
         type: 3}
-      propertyPath: InitLife
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3754212819229557362, guid: 97a211546a827474a94fb2a8a6377598,
-        type: 3}
       propertyPath: spawnLocation
       value: 
       objectReference: {fileID: 1712337451}

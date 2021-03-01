@@ -14,6 +14,9 @@ namespace Control
         public PoolManager PoolManager;
         public GameObject PauseScreenPanel;
 
+        public AudioClip attackSound;
+        public AudioClip walkSound;
+
         private ICharacter playerCharacter;
         private bool isInteracting = false;
         private bool isPaused = false;
@@ -46,6 +49,8 @@ namespace Control
             if (vertical > 0.0f)
             {
                 WalkParticle.Play();
+                if (walkSound)
+                    GetComponent<AudioSource>().PlayOneShot(walkSound);
             }
             else
             {
@@ -107,6 +112,8 @@ namespace Control
         {
             if (Input.GetMouseButtonDown(0))
             {
+                if (attackSound)
+                    GetComponent<AudioSource>().PlayOneShot(attackSound);
                 playerCharacter.Attack();
                 PoolManager.CreateNext(GetComponent<Collider>(), transform.position + transform.forward + transform.up, transform.forward);
             }

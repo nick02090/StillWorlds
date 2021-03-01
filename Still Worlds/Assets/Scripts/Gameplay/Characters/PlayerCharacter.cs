@@ -20,7 +20,7 @@ namespace Gameplay.Characters
         private HUD hud = null;
         private GameObject deathScreenPanel;
 
-        private int life = 1;
+        private int life = 100;
         private int kill = 0;
 
         private bool isSuicide = false;

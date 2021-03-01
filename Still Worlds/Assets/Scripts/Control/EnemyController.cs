@@ -12,6 +12,7 @@ namespace Control
     {
         public ParticleSystem WalkParticle;
         public PoolManager PoolManager;
+        public AudioClip attackSound;
 
         private FSMAI ai;
         private NavMeshAgent agent;
@@ -60,6 +61,8 @@ namespace Control
 
         public void OnAttack()
         {
+            if (attackSound)
+                GetComponent<AudioSource>().PlayOneShot(attackSound);
             enemyCharacter.Attack();
             PoolManager.CreateNext(GetComponent<Collider>(), transform.position + transform.forward + transform.up, transform.forward);
         }
