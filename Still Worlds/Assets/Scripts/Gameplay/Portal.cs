@@ -11,6 +11,8 @@ namespace Gameplay
         public int sceneToLoad;
         public AudioClip sound;
 
+        private readonly int finalSceneIndex = 9;
+
         private void Start()
         {
             HideInteraction();
@@ -39,6 +41,12 @@ namespace Gameplay
 
         private void LoadScene(int sceneNumber)
         {
+            if (SceneManager.GetActiveScene().buildIndex == finalSceneIndex)
+            {
+                // Game won
+                sceneNumber = 12;
+            }
+
             if (SceneManager.GetActiveScene().buildIndex != sceneNumber)
             {
                 SceneLoading.sceneToLoad = sceneNumber;

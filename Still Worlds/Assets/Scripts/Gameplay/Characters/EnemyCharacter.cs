@@ -1,5 +1,6 @@
 ﻿using Gameplay.Interactors;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Gameplay.Characters
 {
@@ -11,6 +12,8 @@ namespace Gameplay.Characters
         public float visionDistance;
         public float hearingDistance;
         public float visionAngle;
+
+        private readonly int finalSceneIndex = 9;
 
         public WorldPoint spawnLocation;
         public SearchPath searchPath;
@@ -88,6 +91,12 @@ namespace Gameplay.Characters
 
         public void Attack()
         {
+            // Final scene is the showdown!!!
+            if (SceneManager.GetActiveScene().buildIndex == finalSceneIndex)
+            {
+                return;
+            }
+
             // Lose one LIFE when attacking
             int currentLife = GetLife();
             currentLife--;

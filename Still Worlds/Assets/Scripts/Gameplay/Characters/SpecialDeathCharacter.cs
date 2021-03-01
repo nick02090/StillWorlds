@@ -10,7 +10,7 @@ namespace Gameplay.Characters
         {
             portal.SetActive(true);
             ICharacter playerCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<ICharacter>();
-            playerCharacter.SetLife(playerCharacter.GetLife() + playerCharacter.GetKill());
+            playerCharacter.SetLife(playerCharacter.GetLife() + playerCharacter.GetKill() * 666);
             playerCharacter.SetKill(0);
             Destroy(gameObject);
         }

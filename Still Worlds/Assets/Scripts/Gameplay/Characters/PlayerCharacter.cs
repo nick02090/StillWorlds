@@ -1,7 +1,9 @@
-﻿using Gameplay.Interactors;
+﻿using Core;
+using Gameplay.Interactors;
 using System.Linq;
 using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Gameplay.Characters
@@ -20,7 +22,9 @@ namespace Gameplay.Characters
         private HUD hud = null;
         private GameObject deathScreenPanel;
 
-        private int life = 100;
+        private readonly int finalSceneIndex = 9;
+
+        private int life = 1;
         private int kill = 0;
 
         private bool isSuicide = false;
@@ -199,6 +203,12 @@ namespace Gameplay.Characters
 
         public void Attack()
         {
+            // Final scene is the showdown!!!
+            if (SceneManager.GetActiveScene().buildIndex == finalSceneIndex)
+            {
+                return;
+            }
+
             // Lose one LIFE when attacking
             int currentLife = GetLife();
             currentLife--;
@@ -219,6 +229,13 @@ namespace Gameplay.Characters
             int currentLife = GetLife();
             currentLife--;
             SetLife(currentLife);
+
+            if (life <= 0)
+            {
+                // Game over
+                SceneLoading.sceneToLoad = 11;
+                SceneManager.LoadScene(SceneLoading.loadingScene);
+            }
         }
 
         public float GetVisionDistance()
