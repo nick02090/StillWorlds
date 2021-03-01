@@ -4254,6 +4254,12 @@ PrefabInstance:
       propertyPath: messages.Array.data[1]
       value: Lure an enemy to attack you and escape his attack by attacking sacrifice.
       objectReference: {fileID: 0}
+    - target: {fileID: 8760051051391778706, guid: 074f402f670e0fb45894c54e29916f2c,
+        type: 3}
+      propertyPath: messages.Array.data[0]
+      value: Attacking loses you a LIFE. When out of lives, you will respawn, but
+        enemies will not restart.
+      objectReference: {fileID: 0}
     - target: {fileID: 8760051051406434272, guid: 074f402f670e0fb45894c54e29916f2c,
         type: 3}
       propertyPath: m_LocalPosition.x
