@@ -16,6 +16,7 @@ namespace Control
 
         private ICharacter playerCharacter;
         private bool isInteracting = false;
+        private bool isPaused = false;
 
         private void Start()
         {
@@ -25,7 +26,7 @@ namespace Control
 
         private void FixedUpdate()
         {
-            if (!isInteracting & playerCharacter.GetLife() > 0)
+            if (!isInteracting & !isPaused & playerCharacter.GetLife() > 0)
             {
                 MovePlayer();
             }
@@ -54,24 +55,36 @@ namespace Control
 
         private void Update()
         {
-            InteractWithNPC();
-            InteractWithPortal();
-            if (!isInteracting & playerCharacter.GetLife() > 0)
+            if (!isPaused)
             {
-                if (enableAttack)
+                InteractWithNPC();
+                InteractWithPortal();
+                if (!isInteracting & playerCharacter.GetLife() > 0)
                 {
-                    Attack();
+                    if (enableAttack)
+                    {
+                        Attack();
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                    {
+                        StartPause();
+                    }
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Escape))
+            else
             {
-                StartPause();
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    ResumePause();
+                }
             }
             //ShowFPS();
         }
 
         public void StartPause()
         {
+            isPaused = true;
             PauseScreenPanel.SetActive(true);
             Time.timeScale = 0f;
             Cursor.visible = true;
@@ -79,6 +92,7 @@ namespace Control
 
         public void ResumePause()
         {
+            isPaused = false;
             PauseScreenPanel.SetActive(false);
             Time.timeScale = 1f;
             Cursor.visible = false;

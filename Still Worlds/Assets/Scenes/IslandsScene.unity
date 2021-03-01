@@ -269,6 +269,12 @@ Transform:
   m_Father: {fileID: 2135671469}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &267093937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6967101526909228522, guid: 06e5c84f4683ed042b809966da4bbeba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1067407258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &456425306
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,12 +782,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06e5c84f4683ed042b809966da4bbeba, type: 3}
---- !u!1 &1067407259 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6967101525492499883, guid: 06e5c84f4683ed042b809966da4bbeba,
-    type: 3}
-  m_PrefabInstance: {fileID: 1067407258}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1275746188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1418,7 +1418,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PauseScreenPanel
       value: 
-      objectReference: {fileID: 1067407259}
+      objectReference: {fileID: 267093937}
     - target: {fileID: 2439656755589845132, guid: 2f67feb44997b364a9e4533cdb6d0657,
         type: 3}
       propertyPath: m_Name
