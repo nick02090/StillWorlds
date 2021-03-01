@@ -142,6 +142,9 @@ namespace Control
                 // Enter the portal
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    GameCore gameCore = GameObject.FindGameObjectWithTag("GameCore").GetComponent<GameCore>();
+                    gameCore.playerLife = playerCharacter.GetLife();
+                    gameCore.playerKill = playerCharacter.GetKill();
                     portal.Interact();
                 }
             }

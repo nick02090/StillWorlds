@@ -68,6 +68,11 @@ namespace Gameplay.Characters
 
             // Hide cursor on start
             Cursor.visible = false;
+
+            // Set life and kill
+            GameCore gameCore = GameObject.FindGameObjectWithTag("GameCore").GetComponent<GameCore>();
+            life = gameCore.playerLife;
+            kill = gameCore.playerKill;
         }
 
         public void Resume()
