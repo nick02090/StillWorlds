@@ -230,11 +230,15 @@ namespace Gameplay.Characters
             currentLife--;
             SetLife(currentLife);
 
-            if (life <= 0)
+            // Final scene is the showdown!!!
+            if (SceneManager.GetActiveScene().buildIndex == finalSceneIndex)
             {
-                // Game over
-                SceneLoading.sceneToLoad = 11;
-                SceneManager.LoadScene(SceneLoading.loadingScene);
+                if (life <= 0)
+                {
+                    // Game over
+                    SceneLoading.sceneToLoad = 11;
+                    SceneManager.LoadScene(SceneLoading.loadingScene);
+                }
             }
         }
 
