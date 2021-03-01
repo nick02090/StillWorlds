@@ -12,6 +12,7 @@ namespace Control
         public ParticleSystem WalkParticle;
         public bool enableAttack = true;
         public PoolManager PoolManager;
+        public GameObject PauseScreenPanel;
 
         private ICharacter playerCharacter;
         private bool isInteracting = false;
@@ -62,7 +63,30 @@ namespace Control
                     Attack();
                 }
             }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                StartPause();
+            }
             //ShowFPS();
+        }
+
+        public void StartPause()
+        {
+            PauseScreenPanel.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.visible = true;
+        }
+
+        public void ResumePause()
+        {
+            PauseScreenPanel.SetActive(false);
+            Time.timeScale = 1f;
+            Cursor.visible = false;
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
         }
 
         private void Attack()

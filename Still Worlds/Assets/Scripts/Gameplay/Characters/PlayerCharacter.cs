@@ -91,7 +91,7 @@ namespace Gameplay.Characters
             }
             if (life <= 0)
             {
-                Text deathExplanaiton = deathScreenPanel.transform.GetChild(0).GetComponent<Text>();
+                Text deathExplanaiton = deathScreenPanel.transform.GetChild(0).GetChild(0).GetComponent<Text>();
                 if (isSuicide)
                 {
                     deathExplanaiton.text = suicideText;
