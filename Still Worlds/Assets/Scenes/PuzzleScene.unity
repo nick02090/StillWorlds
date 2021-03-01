@@ -4101,6 +4101,12 @@ PrefabInstance:
       propertyPath: portal
       value: 
       objectReference: {fileID: 690938676}
+    - target: {fileID: 5106455254306427212, guid: 94651ff86377a2a4c97b3e028b1f521f,
+        type: 3}
+      propertyPath: messages.Array.data[4]
+      value: Take me. But please, don't listen anything the DEATH has told you to
+        do.
+      objectReference: {fileID: 0}
     - target: {fileID: 5106455255564677906, guid: 94651ff86377a2a4c97b3e028b1f521f,
         type: 3}
       propertyPath: m_Camera

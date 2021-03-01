@@ -1175,6 +1175,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c093be6d050e4419e28005f76c0373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &857463633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6967101526909228522, guid: 06e5c84f4683ed042b809966da4bbeba,
+    type: 3}
+  m_PrefabInstance: {fileID: 2144389541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &866828138
 GameObject:
   m_ObjectHideFlags: 0
@@ -3074,7 +3080,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PauseScreenPanel
       value: 
-      objectReference: {fileID: 2144389542}
+      objectReference: {fileID: 857463633}
     - target: {fileID: 2439656755589845132, guid: 2f67feb44997b364a9e4533cdb6d0657,
         type: 3}
       propertyPath: m_Name
@@ -3672,9 +3678,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06e5c84f4683ed042b809966da4bbeba, type: 3}
---- !u!1 &2144389542 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6967101525492499883, guid: 06e5c84f4683ed042b809966da4bbeba,
-    type: 3}
-  m_PrefabInstance: {fileID: 2144389541}
-  m_PrefabAsset: {fileID: 0}

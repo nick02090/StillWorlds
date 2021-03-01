@@ -415,7 +415,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PauseScreenPanel
       value: 
-      objectReference: {fileID: 1467028307}
+      objectReference: {fileID: 1562729652}
     - target: {fileID: 2439656755589845132, guid: 2f67feb44997b364a9e4533cdb6d0657,
         type: 3}
       propertyPath: m_Name
@@ -1310,12 +1310,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06e5c84f4683ed042b809966da4bbeba, type: 3}
---- !u!1 &1467028307 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6967101525492499883, guid: 06e5c84f4683ed042b809966da4bbeba,
-    type: 3}
-  m_PrefabInstance: {fileID: 1467028306}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1513052841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1395,6 +1389,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 34d96b1e1f796c541aeb2125e7b828bf,
     type: 3}
   m_PrefabInstance: {fileID: 1513052841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1562729652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6967101526909228522, guid: 06e5c84f4683ed042b809966da4bbeba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467028306}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1577905101 stripped
 GameObject:
