@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ExtraScene.unity
     guid: ac38b8b4911d14f43b394ae110694333
+  - enabled: 1
+    path: Assets/Scenes/ConvertScene.unity
+    guid: 11847ce068e133444b0eff7caadb66b3
   m_configObjects: {}
