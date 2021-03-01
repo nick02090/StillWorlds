@@ -62,7 +62,7 @@ namespace Control
                     Attack();
                 }
             }
-            ShowFPS();
+            //ShowFPS();
         }
 
         private void Attack()

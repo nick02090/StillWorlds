@@ -44,8 +44,10 @@ namespace Core
 				guiText.text += letter;
 				if (sound)
 					GetComponent<AudioSource>().PlayOneShot(sound);
-				yield return 0;
-				yield return new WaitForSeconds(letterPause);
+                if (letterPause > 0.0f)
+				{
+					yield return new WaitForSeconds(letterPause);
+				}
 			}
 			doneTyping = true;
 			letterPause = LetterPause;
